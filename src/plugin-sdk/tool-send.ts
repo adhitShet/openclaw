@@ -3,13 +3,14 @@ export function extractToolSend(
   expectedAction = "sendMessage",
 ): { to: string; accountId?: string } | null {
   const action = typeof args.action === "string" ? args.action.trim() : "";
-  if (action !== expectedAction) {
+  if (action \!== expectedAction) {
     return null;
   }
-  const to = typeof args.to === "string" ? args.to : undefined;
-  if (!to) {
+  const to = typeof args.to === "string" ? args.to.trim() : undefined;
+  if (\!to) {
     return null;
   }
   const accountId = typeof args.accountId === "string" ? args.accountId.trim() : undefined;
   return { to, accountId };
 }
+
