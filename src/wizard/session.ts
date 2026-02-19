@@ -104,7 +104,7 @@ class WizardSessionPrompter implements WizardPrompter {
       initialValue: params.initialValues,
       executor: "client",
     });
-    return (Array.isArray(res) ? res : []) as T[];
+    return (Array.isArray(res) ? res : res != null ? [res] : []) as T[];
   }
 
   async text(params: {
