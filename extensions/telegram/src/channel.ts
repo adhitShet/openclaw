@@ -312,7 +312,7 @@ export const telegramPlugin: ChannelPlugin<ResolvedTelegramAccount, TelegramProb
     }),
     probeAccount: async ({ account, timeoutMs }) =>
       getTelegramRuntime().channel.telegram.probeTelegram(
-        account.token,
+        account.token.trim(),
         timeoutMs,
         account.config.proxy,
       ),
