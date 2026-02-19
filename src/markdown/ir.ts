@@ -283,7 +283,6 @@ function handleLinkClose(state: RenderState) {
   const start = link.labelStart;
   const end = target.text.length;
   if (end <= start) {
-    target.links.push({ start, end, href });
     return;
   }
   target.links.push({ start, end, href });
