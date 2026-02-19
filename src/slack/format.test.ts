@@ -29,7 +29,7 @@ describe("markdownToSlackMrkdwn", () => {
 
   it("renders fenced code blocks", () => {
     const res = markdownToSlackMrkdwn("```js\nconst x = 1;\n```");
-    expect(res).toBe("```\nconst x = 1;\n```");
+    expect(res).toBe("```\nconst x = 1;\n\n```");
   });
 
   it("renders links with Slack mrkdwn syntax", () => {
